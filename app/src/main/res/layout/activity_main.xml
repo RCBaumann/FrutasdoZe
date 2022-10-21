@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="@+id/header" />
 
     <AutoCompleteTextView
-        android:id="@+id/pesquisarFruta"
+        android:id="@+id/pesquisar_fruta"
         android:layout_width="300dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
@@ -46,18 +46,18 @@
         app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnBuscar"
+        android:id="@+id/btn_buscar"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/buscar_icon"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/pesquisarFruta"
+        app:layout_constraintBottom_toBottomOf="@+id/pesquisar_fruta"
         app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintStart_toEndOf="@+id/pesquisarFruta" />
+        app:layout_constraintStart_toEndOf="@+id/pesquisar_fruta" />
 
 
     <ListView
-        android:id="@+id/listaFrutas"
+        android:id="@+id/lista_frutas"
         android:layout_width="380dp"
         android:layout_height="500dp"
         android:layout_marginTop="16dp"
@@ -65,26 +65,26 @@
         android:backgroundTint="#C8E6C9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pesquisarFruta" />
+        app:layout_constraintTop_toBottomOf="@+id/pesquisar_fruta" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAddProduto"
+        android:id="@+id/btn_add_produto"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/add_produto_icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.471"
-        app:layout_constraintStart_toStartOf="@+id/listaFrutas"
-        app:layout_constraintTop_toBottomOf="@+id/listaFrutas" />
+        app:layout_constraintStart_toStartOf="@+id/lista_frutas"
+        app:layout_constraintTop_toBottomOf="@+id/lista_frutas" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnEditarProduto"
+        android:id="@+id/btn_editar_produto"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/editar_lista_icon"
-        app:layout_constraintEnd_toEndOf="@+id/listaFrutas"
-        app:layout_constraintTop_toTopOf="@+id/btnAddProduto" />
+        app:layout_constraintEnd_toEndOf="@+id/lista_frutas"
+        app:layout_constraintTop_toTopOf="@+id/btn_add_produto" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
