@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#D8E8D8">
 
 
     <TextView
@@ -34,7 +35,7 @@
         app:layout_constraintTop_toTopOf="@+id/header" />
 
     <AutoCompleteTextView
-        android:id="@+id/pesquisar_fruta"
+        android:id="@+id/pesquisarFruta"
         android:layout_width="300dp"
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
@@ -45,100 +46,45 @@
         app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_buscar"
+        android:id="@+id/btnBuscar"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/buscar_icon"
         android:text=""
-        app:layout_constraintBottom_toBottomOf="@+id/pesquisar_fruta"
+        app:layout_constraintBottom_toBottomOf="@+id/pesquisarFruta"
         app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintStart_toEndOf="@+id/pesquisar_fruta" />
+        app:layout_constraintStart_toEndOf="@+id/pesquisarFruta" />
 
-    <TextView
-        android:id="@+id/data_validade"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/container_infos"
-        android:gravity="center"
-        android:text="tipo fruta"
-        app:layout_constraintStart_toStartOf="@+id/pesquisar_fruta"
-        app:layout_constraintTop_toBottomOf="@+id/pesquisar_fruta" />
-
-    <TextView
-        android:id="@+id/tipo_fruta"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/container_infos"
-        android:text="data de validade"
-        android:gravity="center"
-        app:layout_constraintStart_toEndOf="@+id/data_validade"
-        app:layout_constraintTop_toTopOf="@+id/data_validade" />
-
-    <TextView
-        android:id="@+id/nome_fruta"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="16dp"
-        android:background="@drawable/container_infos"
-        android:text="nome da fruta"
-        android:gravity="center"
-        app:layout_constraintStart_toEndOf="@+id/tipo_fruta"
-        app:layout_constraintTop_toTopOf="@+id/data_validade" />
-
-    <TextView
-        android:id="@+id/valor_fruta"
-        android:layout_width="78dp"
-        android:layout_height="56dp"
-        android:background="@drawable/container_infos"
-        android:gravity="center"
-        android:text="valor da fruta kg"
-        app:layout_constraintEnd_toEndOf="@+id/header"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/nome_fruta"
-        app:layout_constraintTop_toTopOf="@+id/data_validade" />
-
-    <TextView
-        android:id="@+id/id_fruta"
-        android:layout_width="154dp"
-        android:layout_height="36dp"
-        android:background="@drawable/container_infos"
-        android:gravity="center"
-        android:hint="ID da Fruta"
-        android:textSize="14dp"
-        android:text=""
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/data_validade" />
 
     <ListView
-        android:id="@+id/lista_frutas"
+        android:id="@+id/listaFrutas"
         android:layout_width="380dp"
-        android:layout_height="320dp"
+        android:layout_height="500dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/container_infos"
         android:backgroundTint="#C8E6C9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_fruta" />
+        app:layout_constraintTop_toBottomOf="@+id/pesquisarFruta" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_editar_lista"
-        android:layout_width="220dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/container_infos"
-        android:fontFamily="@font/bevan"
-        android:text="Adicionar Produto"
-        android:textAlignment="center"
-        android:gravity="center"
-        android:textStyle="bold"
+        android:id="@+id/btnAddProduto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/add_produto_icon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/lista_frutas"
-        app:layout_constraintTop_toBottomOf="@+id/lista_frutas" />
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="@+id/listaFrutas"
+        app:layout_constraintTop_toBottomOf="@+id/listaFrutas" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEditarProduto"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/editar_lista_icon"
+        app:layout_constraintEnd_toEndOf="@+id/listaFrutas"
+        app:layout_constraintTop_toTopOf="@+id/btnAddProduto" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

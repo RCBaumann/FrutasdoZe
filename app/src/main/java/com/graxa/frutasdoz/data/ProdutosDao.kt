@@ -10,7 +10,7 @@ import androidx.room.Query
 interface ProdutosDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addProdutos(produtos: Produtos)
+    fun addProdutos(produtos: Produtos)
 
     @Query("SELECT * FROM proutos_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<Produtos>>
