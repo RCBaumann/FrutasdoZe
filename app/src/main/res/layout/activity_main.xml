@@ -126,12 +126,12 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_editar_lista"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
+        android:layout_width="220dp"
+        android:layout_height="70dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/container_infos"
         android:fontFamily="@font/bevan"
-        android:text="Editar lista"
+        android:text="Adicionar Produto"
         android:textAlignment="center"
         android:gravity="center"
         android:textStyle="bold"
@@ -139,39 +139,6 @@
         app:layout_constraintStart_toStartOf="@+id/lista_frutas"
         app:layout_constraintTop_toBottomOf="@+id/lista_frutas" />
 
-    <Button
-        android:id="@+id/btn_add"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="25dp"
-        android:backgroundTint="#7CB342"
-        android:text="Adicionar"
-        android:textSize="12dp"
-        app:layout_constraintStart_toStartOf="@+id/lista_frutas"
-        app:layout_constraintTop_toBottomOf="@+id/btn_editar_lista"
-        android:visibility="visible"/>
 
-    <Button
-        android:id="@+id/btn_edit"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:text="Editar"
-        android:textSize="12dp"
-        android:backgroundTint="#7CB342"
-        app:layout_constraintEnd_toStartOf="@+id/btn_delete"
-        app:layout_constraintStart_toEndOf="@+id/btn_add"
-        app:layout_constraintTop_toTopOf="@+id/btn_add"
-        android:visibility="visible"/>
-
-    <Button
-        android:id="@+id/btn_delete"
-        android:layout_width="110dp"
-        android:layout_height="60dp"
-        android:text="Remover"
-        android:textSize="12dp"
-        android:backgroundTint="#E53935"
-        app:layout_constraintEnd_toEndOf="@+id/lista_frutas"
-        app:layout_constraintTop_toTopOf="@+id/btn_edit"
-        android:visibility="visible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
