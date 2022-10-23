@@ -40,7 +40,7 @@
         android:layout_height="35dp"
         android:layout_marginTop="16dp"
         android:hint="Pesquisar"
-        android:text=""
+        android:imeOptions="actionDone"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="@+id/header"
         app:layout_constraintTop_toBottomOf="@+id/header" />
@@ -73,7 +73,7 @@
         android:layout_height="100dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/add_produto_icon"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/listaFrutas"
         app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="@+id/listaFrutas"
         app:layout_constraintTop_toBottomOf="@+id/listaFrutas" />

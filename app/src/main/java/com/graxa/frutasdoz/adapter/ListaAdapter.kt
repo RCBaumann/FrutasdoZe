@@ -1,11 +1,12 @@
-package com.graxa.frutasdoz
+package com.graxa.frutasdoz.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.graxa.frutasdoz.ListaAdapter.*
-import com.graxa.frutasdoz.data.Produtos
+import com.graxa.frutasdoz.R
+import com.graxa.frutasdoz.adapter.ListaAdapter.*
+import com.graxa.frutasdoz.model.Produtos
 import kotlinx.android.synthetic.main.lista_produtos.view.*
 
 class ListaAdapter: RecyclerView.Adapter<ListaViewHolder>() {

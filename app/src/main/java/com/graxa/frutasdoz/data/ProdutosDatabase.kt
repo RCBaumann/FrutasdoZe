@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.graxa.frutasdoz.model.Produtos
 
 @Database(entities = [Produtos::class], version = 1, exportSchema = false)
 abstract class ProdutosDatabase: RoomDatabase() {

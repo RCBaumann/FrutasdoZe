@@ -1,9 +1,12 @@
-package com.graxa.frutasdoz.data
+package com.graxa.frutasdoz.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.graxa.frutasdoz.model.Produtos
+import com.graxa.frutasdoz.data.ProdutosDatabase
+import com.graxa.frutasdoz.repository.ProdutosRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

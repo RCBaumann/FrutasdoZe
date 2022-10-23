@@ -6,8 +6,8 @@ import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.graxa.frutasdoz.data.Produtos
-import com.graxa.frutasdoz.data.ProdutosViewModel
+import com.graxa.frutasdoz.model.Produtos
+import com.graxa.frutasdoz.viewmodel.ProdutosViewModel
 import com.graxa.frutasdoz.databinding.ActivityCadastroBinding
 import kotlinx.android.synthetic.main.activity_cadastro.*
 
