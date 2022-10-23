@@ -24,6 +24,7 @@ class ListaAdapter: RecyclerView.Adapter<ListaViewHolder>() {
         holder.itemView.idLista.text = itemLista.id.toString()
         holder.itemView.nomeLista.text = itemLista.name
         holder.itemView.tipoLista.text = itemLista.tipoProduto
+        holder.itemView.dataLista.text = itemLista.dataValidade.toString()
     }
 
     override fun getItemCount(): Int {

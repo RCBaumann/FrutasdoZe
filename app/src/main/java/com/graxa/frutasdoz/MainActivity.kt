@@ -17,9 +17,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var mProdutosViewModel : ProdutosViewModel
+
     private lateinit var listaFrutas : RecyclerView
-//    private lateinit var listaAdapter: ListaAdapter
+
+    private lateinit var mProdutosViewModel : ProdutosViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,18 +37,17 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Ainda não está pronto", Toast.LENGTH_LONG).show()
         }
 
+        binding.btnBuscar.setOnClickListener(){
+            Toast.makeText(this,"Logo logo você vai poder pesquisar",Toast.LENGTH_LONG).show()
+        }
+
+        //RecyclerView correto
         listaFrutas = findViewById(R.id.listaFrutas)
         listaFrutas.setHasFixedSize(true)
 
         val adapter = ListaAdapter()
         listaFrutas.adapter = adapter
         listaFrutas.layoutManager = LinearLayoutManager(this)
-
-        //Recyclerview
-//        val adapter = ListaAdapter()
-//        val listaView = listaFrutas
-//        listaView.adapter = adapter
-//        listaView.layoutManager = LinearLayoutManager(requireContext())
 
         //ProdutosViewModel
         mProdutosViewModel = ViewModelProvider(this).get(ProdutosViewModel::class.java)
