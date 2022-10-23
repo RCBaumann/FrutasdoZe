@@ -5,8 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="24dp"
+    android:layout_margin="2dp"
     android:id="@+id/rawList"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    android:background="@drawable/container_textview_lista_cadastro">
 
     <TextView
         android:id="@+id/idLista"
