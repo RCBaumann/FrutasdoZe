@@ -2,7 +2,6 @@ package com.graxa.frutasdoz
 
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -47,10 +46,10 @@ class CadastroActivity : AppCompatActivity() {
 //        val peso = et_peso.text
 //        val valor = et_valor.text
 
-        if(inputCheck(nome,tipoProduto,dataValidade)) {
+        if(verificarDados(nome,tipoProduto,dataValidade.toString())) {
             //Create Produtos Object
             val produtos = Produtos(0, nome,tipoProduto,Integer.parseInt(dataValidade.toString()))
-           //Add data to Database
+           //Add dados no BD
             mUserProdutosViewModel.addProdutos(produtos)
             Toast.makeText(this,"Adicionado com sucesso",Toast.LENGTH_LONG).show()
             finish()
@@ -60,9 +59,9 @@ class CadastroActivity : AppCompatActivity() {
 
     }
 
-    private fun inputCheck (
+    private fun verificarDados (
         nome: String, tipoProduto: String,
-        dataValidade: Editable
+        dataValidade: String
     ): Boolean {
         return  !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(tipoProduto) && TextUtils.isEmpty(dataValidade.toString()))
     }

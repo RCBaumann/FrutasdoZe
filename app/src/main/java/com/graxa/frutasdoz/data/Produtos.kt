@@ -10,4 +10,5 @@ data class Produtos(
     val name: String,
     val tipoProduto: String,
     val dataValidade: Int
+    //todo colocar campos restantes
 )
