@@ -24,33 +24,36 @@ class CadastroActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar!!.hide();
 
-        mUserProdutosViewModel = ViewModelProvider(this).get(ProdutosViewModel::class.java)
+        mUserProdutosViewModel = ViewModelProvider(this)[ProdutosViewModel::class.java]
 
         binding.btnVoltar.setOnClickListener() {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
         }
         binding.btnAdd.setOnClickListener {
-            insertDataToDatabase()
+            inserirDados()
         }
         return
 
     }
 
-    private fun insertDataToDatabase() {
+    private fun inserirDados() {
         val nome = et_nome.text.toString()
         val tipoProduto = et_tipo.text.toString()
         val dataValidade = et_data.text
-        val quantidade = et_quantidade.text
-        val peso = et_peso.text
-        val valor = et_valor.text
 
-        if(inputCheck(nome,tipoProduto,dataValidade,quantidade,peso,valor)) {
+        //todo colocar os outros campos
+//        val quantidade = et_quantidade.text
+//        val peso = et_peso.text
+//        val valor = et_valor.text
+
+        if(inputCheck(nome,tipoProduto,dataValidade)) {
             //Create Produtos Object
-            val produtos = Produtos(0, nome,tipoProduto,Integer.parseInt(dataValidade.toString()),Integer.parseInt(quantidade.toString()),Integer.parseInt(peso.toString(),Integer.parseInt(valor.toString())))
+            val produtos = Produtos(0, nome,tipoProduto,Integer.parseInt(dataValidade.toString()))
            //Add data to Database
             mUserProdutosViewModel.addProdutos(produtos)
             Toast.makeText(this,"Adicionado com sucesso",Toast.LENGTH_LONG).show()
+            finish()
         }else{
             Toast.makeText(this,"Confira as informações", Toast.LENGTH_LONG).show()
         }
@@ -59,11 +62,9 @@ class CadastroActivity : AppCompatActivity() {
 
     private fun inputCheck (
         nome: String, tipoProduto: String,
-        dataValidade: Editable, quantidade: Editable,
-        peso: Editable, valor: Editable
+        dataValidade: Editable
     ): Boolean {
-        return  !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(tipoProduto) && TextUtils.isEmpty(dataValidade.toString())
-                && TextUtils.isEmpty(quantidade.toString()) && TextUtils.isEmpty(peso.toString()) && TextUtils.isEmpty(valor.toString()))
+        return  !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(tipoProduto) && TextUtils.isEmpty(dataValidade.toString()))
     }
 
 }

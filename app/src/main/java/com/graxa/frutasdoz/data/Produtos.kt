@@ -9,7 +9,5 @@ data class Produtos(
     val id: Int,
     val name: String,
     val tipoProduto: String,
-    val dataValidade: Int,
-    val quantidade: Int,
-    val peso: Int
+    val dataValidade: Int
 )
