@@ -3,6 +3,7 @@ package com.graxa.frutasdoz.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
 import androidx.recyclerview.widget.RecyclerView
 import com.graxa.frutasdoz.R
 import com.graxa.frutasdoz.adapter.ListaAdapter.*
@@ -12,6 +13,7 @@ import kotlinx.android.synthetic.main.lista_produtos.view.*
 class ListaAdapter: RecyclerView.Adapter<ListaViewHolder>() {
 
     private var produtosList = emptyList<Produtos>()
+    lateinit var navController: NavController
 
     class ListaViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
 
@@ -26,7 +28,13 @@ class ListaAdapter: RecyclerView.Adapter<ListaViewHolder>() {
         holder.itemView.nomeLista.text = itemLista.name
         holder.itemView.tipoLista.text = itemLista.tipoProduto
         holder.itemView.dataLista.text = itemLista.dataValidade.toString()
+
+
+//        holder.itemView.rawList.setOnClickListener{
+//            navController.navigate(R.id.atualizaDadosFragment)
+//        }
     }
+
 
     override fun getItemCount(): Int {
         return produtosList.size

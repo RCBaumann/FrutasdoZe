@@ -4,45 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroActivity"
-    android:background="#D8E8D8">
+    tools:context=".fragments.att.AtualizaDadosFragment"
+    android:background="#D8E8D8"
+    android:id="@+id/rowAttLista">
 
     <TextView
-        android:id="@+id/header_cadastro"
+        android:id="@+id/att_header_cadastro"
         android:layout_width="370dp"
         android:layout_height="85dp"
-        android:layout_marginTop="36dp"
         android:background="@drawable/container_header"
         android:fontFamily="@font/bevan"
         android:gravity="center"
-        android:text="CADASTRAR"
+        android:text="ATUALIZAR"
         android:textAlignment="center"
         android:textColor="#FF6D00"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <ImageView
         android:layout_width="99dp"
         android:layout_height="61dp"
         android:layout_weight="1"
         android:src="@drawable/logo_cadastro_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/header_cadastro"
-        app:layout_constraintStart_toStartOf="@+id/header_cadastro"
-        app:layout_constraintTop_toTopOf="@+id/header_cadastro" />
+        app:layout_constraintBottom_toBottomOf="@+id/att_header_cadastro"
+        app:layout_constraintStart_toStartOf="@+id/att_header_cadastro"
+        app:layout_constraintTop_toTopOf="@+id/att_header_cadastro" />
 
     <LinearLayout
         android:id="@+id/linear_layout"
         android:layout_width="353dp"
         android:layout_height="551dp"
-        android:layout_marginTop="24dp"
         android:background="@drawable/container_edit_lista"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="@+id/header_cadastro"
-        app:layout_constraintStart_toStartOf="@+id/header_cadastro"
-        app:layout_constraintTop_toBottomOf="@+id/header_cadastro">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/att_header_cadastro"
+        android:layout_marginTop="18dp">
 
         <TextView
             android:id="@+id/textView2"
@@ -55,15 +56,15 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/et_nome"
+            android:id="@+id/etAttNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:hint="Digite o Nome"
             android:imeOptions="actionDone"
+            android:inputType="textPersonName"
             android:singleLine="true"
-            android:textColorHint="@color/white"
-            android:inputType="textPersonName"/>
+            android:textColorHint="@color/white" />
 
         <TextView
             android:id="@+id/textView3"
@@ -76,15 +77,15 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/et_tipo"
+            android:id="@+id/etAttTipo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:hint="Fruta ou Verdura"
             android:imeOptions="actionDone"
+            android:inputType="textPersonName"
             android:singleLine="true"
-            android:textColorHint="@color/white"
-            android:inputType="textPersonName"/>
+            android:textColorHint="@color/white" />
 
         <TextView
             android:id="@+id/textView8"
@@ -97,15 +98,15 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/et_data"
+            android:id="@+id/etAttData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:hint="DD/MM/AA"
             android:imeOptions="actionDone"
+            android:inputType="date"
             android:singleLine="true"
-            android:textColorHint="@color/white"
-            android:inputType="date"/>
+            android:textColorHint="@color/white" />
 
         <TextView
             android:id="@+id/textView9"
@@ -118,15 +119,15 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/et_quantidade"
+            android:id="@+id/etAttQuantidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:hint="Unidades"
             android:imeOptions="actionDone"
+            android:inputType="number"
             android:singleLine="true"
-            android:textColorHint="@color/white"
-            android:inputType="number"/>
+            android:textColorHint="@color/white" />
 
         <TextView
             android:id="@+id/textView10"
@@ -139,15 +140,15 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/et_peso"
+            android:id="@+id/etAttPeso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:hint="Kg"
             android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
             android:singleLine="true"
-            android:textColorHint="@color/white"
-            android:inputType="numberDecimal"/>
+            android:textColorHint="@color/white" />
 
         <TextView
             android:id="@+id/textView11"
@@ -161,41 +162,40 @@
 
 
         <EditText
-            android:id="@+id/et_valor"
+            android:id="@+id/etAttValor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:hint="R$"
             android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
             android:singleLine="true"
-            android:textColorHint="@color/white"
-            android:inputType="numberDecimal"/>
+            android:textColorHint="@color/white" />
 
 
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_add"
+        android:id="@+id/btnAtualizar"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="132dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/add_icon"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/att_icon"
         android:textSize="12sp"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="@+id/linear_layout"
         app:layout_constraintTop_toBottomOf="@+id/linear_layout" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_voltar"
+        android:id="@+id/btnVoltar"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="88dp"
         android:background="@drawable/voltar_icon"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/linear_layout"
-        app:layout_constraintStart_toEndOf="@+id/btn_add"
-        app:layout_constraintTop_toTopOf="@+id/btn_add" />
-
+        app:layout_constraintStart_toEndOf="@+id/btnAtualizar"
+        app:layout_constraintTop_toTopOf="@+id/btnAtualizar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
