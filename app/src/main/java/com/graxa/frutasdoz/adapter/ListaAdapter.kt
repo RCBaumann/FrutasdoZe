@@ -13,10 +13,10 @@ import kotlinx.android.synthetic.main.lista_produtos.view.*
 class ListaAdapter: RecyclerView.Adapter<ListaViewHolder>() {
 
     private var produtosList = emptyList<Produtos>()
-    lateinit var navController: NavController
 
-    class ListaViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    class ListaViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListaViewHolder {
         return ListaViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.lista_produtos,parent,false))
@@ -27,12 +27,8 @@ class ListaAdapter: RecyclerView.Adapter<ListaViewHolder>() {
         holder.itemView.idLista.text = itemLista.id.toString()
         holder.itemView.nomeLista.text = itemLista.name
         holder.itemView.tipoLista.text = itemLista.tipoProduto
-        holder.itemView.dataLista.text = itemLista.dataValidade.toString()
+        holder.itemView.dataLista.text = itemLista.dataValidade
 
-
-//        holder.itemView.rawList.setOnClickListener{
-//            navController.navigate(R.id.atualizaDadosFragment)
-//        }
     }
 
 

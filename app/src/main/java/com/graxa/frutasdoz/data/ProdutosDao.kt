@@ -13,7 +13,7 @@ interface ProdutosDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addProdutos(produtos: Produtos)
 
-    @Query("SELECT * FROM proutos_table ORDER BY id ASC")
+    @Query("SELECT * FROM produtos_table ORDER BY id ASC")
     fun readAllData(): LiveData<List<Produtos>>
 
 }

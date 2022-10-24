@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/listaFragment"
-    tools:context=".fragments.lista.ListaFragment">
+    tools:context=".fragments.lista.ListaFragment"
+    android:layout_marginStart="6dp"
+    android:layout_marginEnd="6dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaFrutas"

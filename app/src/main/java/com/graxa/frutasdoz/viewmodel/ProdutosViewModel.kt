@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 class ProdutosViewModel(application: Application): AndroidViewModel(application) {
 
     val readAllData: LiveData<List<Produtos>>
-    val repository: ProdutosRepository
+    private val repository: ProdutosRepository
 
     init {
         val produtosDao = ProdutosDatabase.getDatabase(application).produtosDao()
