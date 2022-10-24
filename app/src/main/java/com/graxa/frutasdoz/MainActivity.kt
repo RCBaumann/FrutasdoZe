@@ -11,20 +11,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var listaFrutas : RecyclerView
-
-    private lateinit var mProdutosViewModel : ProdutosViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar!!.hide();
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        binding.btnEditarProduto.setOnClickListener() {
-            Toast.makeText(this, "Ainda não está pronto", Toast.LENGTH_LONG).show()
-        }
 
         binding.btnBuscar.setOnClickListener(){
             Toast.makeText(this,"Logo logo você vai poder pesquisar",Toast.LENGTH_LONG).show()

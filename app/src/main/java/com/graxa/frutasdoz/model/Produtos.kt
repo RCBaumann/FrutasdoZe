@@ -12,6 +12,6 @@ data class Produtos(
     val id: Int,
     val name: String,
     val tipoProduto: String,
-    val dataValidade: Int
+    val dataValidade: String
     //todo colocar campos restantes
 ):Parcelable
