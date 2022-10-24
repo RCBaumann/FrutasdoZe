@@ -10,7 +10,7 @@ import kotlinx.android.parcel.Parcelize
 data class Produtos(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val name: String,
+    val nome: String,
     val tipoProduto: String,
     val dataValidade: String
     //todo colocar campos restantes

@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_listaFragment_to_adicionarFragment"
             app:destination="@id/adicionarFragment" />
+        <action
+            android:id="@+id/action_listaFragment_to_atualizaFragment"
+            app:destination="@id/atualizaFragment" />
     </fragment>
     <fragment
         android:id="@+id/adicionarFragment"
@@ -20,6 +23,18 @@
         tools:layout="@layout/fragment_adicionar" >
         <action
             android:id="@+id/action_adicionarFragment_to_listaFragment"
+            app:destination="@id/listaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/atualizaFragment"
+        android:name="com.graxa.frutasdoz.fragments.att.AtualizaFragment"
+        android:label="atualiza"
+        tools:layout="@layout/fragment_atualiza" >
+        <argument
+            android:name="produtosAtual"
+            app:argType="com.graxa.frutasdoz.model.Produtos" />
+        <action
+            android:id="@+id/action_atualizaFragment_to_listaFragment2"
             app:destination="@id/listaFragment" />
     </fragment>
 </navigation>

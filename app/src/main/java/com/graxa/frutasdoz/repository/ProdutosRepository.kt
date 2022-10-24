@@ -8,7 +8,20 @@ class ProdutosRepository(private val produtosDao: ProdutosDao) {
 
     val readAllData: LiveData<List<Produtos>> = produtosDao.readAllData()
 
-    fun addProdutos(produtos: Produtos) {
+    suspend fun addProdutos(produtos: Produtos) {
         produtosDao.addProdutos(produtos)
     }
+
+    suspend fun updateProdutos(produtos: Produtos){
+        produtosDao.updateProdutos(produtos)
+    }
+
+    suspend fun deleteProdutos(produtos: Produtos){
+        produtosDao.deleteProdutos(produtos)
+    }
+
+    suspend fun deleteAllProdutos(){
+        produtosDao.deleteAllProdutos()
+    }
+
 }

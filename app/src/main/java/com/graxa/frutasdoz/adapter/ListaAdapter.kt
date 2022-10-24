@@ -3,10 +3,11 @@ package com.graxa.frutasdoz.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.graxa.frutasdoz.R
 import com.graxa.frutasdoz.adapter.ListaAdapter.*
+import com.graxa.frutasdoz.fragments.lista.ListaFragmentDirections
 import com.graxa.frutasdoz.model.Produtos
 import kotlinx.android.synthetic.main.lista_produtos.view.*
 
@@ -25,9 +26,14 @@ class ListaAdapter: RecyclerView.Adapter<ListaViewHolder>() {
     override fun onBindViewHolder(holder: ListaViewHolder, position: Int) {
         val itemLista = produtosList[position]
         holder.itemView.idLista.text = itemLista.id.toString()
-        holder.itemView.nomeLista.text = itemLista.name
+        holder.itemView.nomeLista.text = itemLista.nome
         holder.itemView.tipoLista.text = itemLista.tipoProduto
         holder.itemView.dataLista.text = itemLista.dataValidade
+
+        holder.itemView.rolList.setOnClickListener(){
+            val action = ListaFragmentDirections.actionListaFragmentToAtualizaFragment(itemLista)
+            holder.itemView.findNavController().navigate(action)
+        }
 
     }
 

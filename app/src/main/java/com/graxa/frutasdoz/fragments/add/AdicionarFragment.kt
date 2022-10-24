@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.fragment_adicionar.view.*
 
 class AdicionarFragment : Fragment() {
 
-    private lateinit var mUserProdutosViewModel: ProdutosViewModel
+    private lateinit var mProdutosViewModel: ProdutosViewModel
 
 
     override fun onCreateView(
@@ -27,7 +27,7 @@ class AdicionarFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_adicionar, container,false)
 
-        mUserProdutosViewModel = ViewModelProvider(this)[ProdutosViewModel::class.java]
+        mProdutosViewModel = ViewModelProvider(this)[ProdutosViewModel::class.java]
 
 
         view.btnSalvar.setOnClickListener(){
@@ -51,7 +51,7 @@ class AdicionarFragment : Fragment() {
             //Create Produtos Object
             val produtos = Produtos(0, nome,tipoProduto,dataValidade)
             //Add dados no BD
-            mUserProdutosViewModel.addProdutos(produtos)
+            mProdutosViewModel.addProdutos(produtos)
             Toast.makeText(requireContext(),"Produto adicionado com sucesso",Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_adicionarFragment_to_listaFragment)
         }else{

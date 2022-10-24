@@ -1,13 +1,25 @@
 package com.graxa.frutasdoz.fragments.att
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.text.TextUtils
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.graxa.frutasdoz.R
+import com.graxa.frutasdoz.model.Produtos
+import com.graxa.frutasdoz.viewmodel.ProdutosViewModel
+import kotlinx.android.synthetic.main.fragment_adicionar.view.*
+import kotlinx.android.synthetic.main.fragment_atualiza.*
+import kotlinx.android.synthetic.main.fragment_atualiza.view.*
 
 class AtualizaFragment : Fragment() {
+
+    private val args by navArgs<AtualizaFragmentArgs>()
+    private lateinit var mProdutosViewModel: ProdutosViewModel
 
 
     override fun onCreateView(
@@ -15,7 +27,72 @@ class AtualizaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_atualiza, container, false)
+        val view = inflater.inflate(R.layout.fragment_atualiza, container, false)
+
+        mProdutosViewModel = ViewModelProvider(this)[ProdutosViewModel::class.java]
+
+        view.etAttNome.setText(args.produtosAtual.nome)
+        view.etAttTipo.setText(args.produtosAtual.tipoProduto)
+        view.etAttData.setText(args.produtosAtual.dataValidade)
+        //todo adicionar outros campos
+
+        view.btnAtt.setOnClickListener(){
+            atualizaDados()
+        }
+
+        setHasOptionsMenu(true)
+
+        return view
+    }
+
+    private fun atualizaDados() {
+        val nome = etAttNome.text.toString()
+        val tipoProduto = etAttTipo.text.toString()
+        val dataValidade = etAttData.text.toString()
+
+        if((verificarDados(nome,tipoProduto,dataValidade))) {
+           //Cria objeto
+            val atualizaDados = Produtos(args.produtosAtual.id, nome, tipoProduto, dataValidade)
+            //att produto atual
+            mProdutosViewModel.updateProdutos(atualizaDados)
+            Toast.makeText(requireContext(),"Produto Atualizado!",Toast.LENGTH_LONG).show()
+
+            //retorna pra lista
+            findNavController().navigate(R.id.action_atualizaFragment_to_listaFragment2)
+        }else{
+            Toast.makeText(requireContext(),"Verifique as informações",Toast.LENGTH_LONG).show()
+        }
+
+    }
+
+    private fun verificarDados (
+        nome: String, tipoProduto: String, dataValidade: String): Boolean {
+        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(tipoProduto) && TextUtils.isEmpty(dataValidade))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.menu_delete){
+            deleteProduto()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteProduto(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Sim") {_,_ ->
+            mProdutosViewModel.deleteProdutos(args.produtosAtual)
+            Toast.makeText(requireContext(),"Apagado Com sucesso: ${args.produtosAtual.nome}",Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.action_atualizaFragment_to_listaFragment2)
+        }
+        builder.setNegativeButton("Não") {_,_ -> }
+        builder.setTitle("Deletar ${args.produtosAtual.nome}?")
+        builder.setMessage("Tem certeza que quer apagar este produto? ${args.produtosAtual.nome}")
+        builder.create().show()
+        //todo add os outros campos
     }
 
 

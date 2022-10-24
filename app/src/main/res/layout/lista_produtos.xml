@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:padding="24dp"
     android:layout_margin="2dp"
-    android:id="@+id/rawList"
+    android:id="@+id/rolList"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     android:background="@drawable/container_textview_lista_cadastro">
 

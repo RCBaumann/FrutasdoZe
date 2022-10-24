@@ -46,6 +46,9 @@ class ListaFragment : Fragment() {
             findNavController().navigate(R.id.action_listaFragment_to_adicionarFragment)
         }
 
+        //add menu
+        setHasOptionsMenu(true)
+
 
         return view
     }
