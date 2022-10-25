@@ -164,7 +164,7 @@
             android:layout_height="match_parent"
             android:text="Atualizar"
             android:background="@drawable/container_btn_lista"
-             />
+            android:layout_marginBottom="50dp" />
 
 
     </LinearLayout>

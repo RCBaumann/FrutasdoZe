@@ -19,7 +19,6 @@ class AdicionarFragment : Fragment() {
 
     private lateinit var mProdutosViewModel: ProdutosViewModel
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

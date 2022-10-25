@@ -34,42 +34,48 @@
         app:layout_constraintStart_toStartOf="@+id/header"
         app:layout_constraintTop_toTopOf="@+id/header" />
 
-<!--    <AutoCompleteTextView-->
-<!--        android:id="@+id/pesquisarFruta"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:hint="Pesquisar"-->
-<!--        android:imeOptions="actionDone"-->
-<!--        android:textSize="14dp"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/header"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/header" />-->
-
-<!--    <androidx.appcompat.widget.AppCompatButton-->
-<!--        android:id="@+id/btnBuscar"-->
-<!--        android:layout_width="30dp"-->
-<!--        android:layout_height="30dp"-->
-<!--        android:background="@drawable/buscar_icon"-->
-<!--        android:text=""-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/pesquisarFruta"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/header"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/pesquisarFruta" />-->
+    <AutoCompleteTextView
+        android:id="@+id/pesquisarFruta"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:hint="Pesquisar"
+        android:imeOptions="actionDone"
+        android:textSize="14dp"
+        app:layout_constraintStart_toStartOf="@+id/header"
+        app:layout_constraintTop_toBottomOf="@+id/header" />
 
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="388dp"
-        android:layout_height="679dp"
+        android:layout_width="406dp"
+        android:layout_height="649dp"
         android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header"
-        app:layout_constraintVertical_bias="0.461"
+        app:layout_constraintTop_toBottomOf="@+id/pesquisarFruta"
+        app:layout_constraintVertical_bias="0.0"
         app:navGraph="@navigation/navigation" />
+
+    <Spinner
+        android:id="@+id/filtroSpinner"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pesquisarFruta"
+        app:layout_constraintStart_toEndOf="@+id/pesquisarFruta" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBuscar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/buscar_icon"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/pesquisarFruta"
+        app:layout_constraintEnd_toEndOf="@+id/header" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
