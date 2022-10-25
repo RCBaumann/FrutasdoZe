@@ -18,15 +18,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnBuscar.setOnClickListener(){
-            Toast.makeText(this,"Logo logo você vai poder pesquisar",Toast.LENGTH_LONG).show()
-        }
-
-        binding.pesquisarFruta.setOnClickListener(){
-            Toast.makeText(this,"Logo logo você vai poder pesquisar",Toast.LENGTH_LONG).show()
-        }
-
-
+//        binding.btnBuscar.setOnClickListener(){
+//            Toast.makeText(this,"Logo logo você vai poder pesquisar",Toast.LENGTH_LONG).show()
+//        }
+//
+//        binding.pesquisarFruta.setOnClickListener(){
+//            Toast.makeText(this,"Logo logo você vai poder pesquisar",Toast.LENGTH_LONG).show()
+//        }
 
     }
 

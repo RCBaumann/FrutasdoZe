@@ -8,7 +8,7 @@
     android:layout_margin="10dp">
 
     <LinearLayout
-        android:id="@+id/linear_layout"
+        android:id="@+id/linearLayoutAdd"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/container_edit_lista"
@@ -24,8 +24,9 @@
             android:layout_height="24dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="6dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Nome do Produto"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -36,7 +37,7 @@
             android:layout_margin="3dp"
             android:hint="Digite o Nome"
             android:imeOptions="actionDone"
-            android:inputType="textPersonName"
+            android:inputType="textCapSentences"
             android:singleLine="true"
             android:textColorHint="@color/white" />
 
@@ -46,8 +47,9 @@
             android:layout_height="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginStart="6dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Tipo do Produto"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -68,8 +70,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginStart="6dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Data de validade"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -79,8 +82,9 @@
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:hint="DD/MM/AA"
+            android:maxLength="10"
             android:imeOptions="actionDone"
-            android:inputType="date"
+            android:inputType="datetime"
             android:singleLine="true"
             android:textColorHint="@color/white" />
 
@@ -90,8 +94,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginStart="6dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Quantidade"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -112,8 +117,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginStart="6dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Peso"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -134,8 +140,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginStart="6dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Valor"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -156,11 +163,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Salvar"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="6dp"
-            android:layout_marginStart="6dp"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/container_textview_lista_cadastro"/>
+            android:background="@drawable/container_btn_lista"/>
 
 
     </LinearLayout>

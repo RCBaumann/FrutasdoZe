@@ -41,15 +41,13 @@ class AdicionarFragment : Fragment() {
         val nome = et_nome.text.toString()
         val tipoProduto = et_tipo.text.toString()
         val dataValidade = et_data.text.toString()
+        val quantidade = et_quantidade.text.toString()
+        val peso = et_peso.text.toString()
+        val valor = et_valor.text.toString()
 
-        //todo colocar os outros campos
-//        val quantidade = et_quantidade.text
-//        val peso = et_peso.text
-//        val valor = et_valor.text
-
-        if(verificarDados(nome,tipoProduto,dataValidade)) {
+        if(verificarDados(nome,tipoProduto,dataValidade,quantidade,peso,valor)) {
             //Create Produtos Object
-            val produtos = Produtos(0, nome,tipoProduto,dataValidade)
+            val produtos = Produtos(0, nome,tipoProduto,dataValidade,quantidade, peso, valor)
             //Add dados no BD
             mProdutosViewModel.addProdutos(produtos)
             Toast.makeText(requireContext(),"Produto adicionado com sucesso",Toast.LENGTH_LONG).show()
@@ -61,8 +59,8 @@ class AdicionarFragment : Fragment() {
     }
 
     private fun verificarDados (
-        nome: String, tipoProduto: String, dataValidade: String): Boolean {
-        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(tipoProduto) && TextUtils.isEmpty(dataValidade))
+        nome: String, tipoProduto: String, dataValidade: String,quantdidade:String,peso:String,valor:String): Boolean {
+        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(tipoProduto) && TextUtils.isEmpty(dataValidade) && TextUtils.isEmpty(quantdidade) && TextUtils.isEmpty(peso) && valor.isEmpty())
     }
 
 

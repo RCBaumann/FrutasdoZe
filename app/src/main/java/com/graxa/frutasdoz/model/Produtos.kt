@@ -12,6 +12,9 @@ data class Produtos(
     val id: Int,
     val nome: String,
     val tipoProduto: String,
-    val dataValidade: String
-    //todo colocar campos restantes
+    val dataValidade: String,
+    val quantidade: String,
+    val peso: String,
+    val valor: String
+    //todo alterar tipos
 ): Parcelable

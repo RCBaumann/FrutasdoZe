@@ -29,6 +29,10 @@ class ListaAdapter: RecyclerView.Adapter<ListaViewHolder>() {
         holder.itemView.nomeLista.text = itemLista.nome
         holder.itemView.tipoLista.text = itemLista.tipoProduto
         holder.itemView.dataLista.text = itemLista.dataValidade
+        holder.itemView.quantidadeLista.text = itemLista.quantidade
+        holder.itemView.pesoLista.text = itemLista.peso
+        holder.itemView.valoLista.text = itemLista.valor
+        //todo ajustas tipos de dados
 
         holder.itemView.rolList.setOnClickListener(){
             val action = ListaFragmentDirections.actionListaFragmentToAtualizaFragment(itemLista)
@@ -36,7 +40,6 @@ class ListaAdapter: RecyclerView.Adapter<ListaViewHolder>() {
         }
 
     }
-
 
     override fun getItemCount(): Int {
         return produtosList.size

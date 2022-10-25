@@ -25,8 +25,9 @@
             android:layout_height="24dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Nome do Produto"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -47,8 +48,9 @@
             android:layout_height="24dp"
             android:layout_marginStart="6dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Tipo do Produto"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -69,8 +71,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Data de validade"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -91,8 +94,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Quantidade"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -113,8 +117,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Peso"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -135,8 +140,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/container_textview_lista_cadastro"
+            android:background="@drawable/container_lista_cadastro"
             android:text="Valor"
+            android:textAlignment="center"
             android:textAllCaps="true"
             android:textStyle="bold" />
 
@@ -156,12 +162,9 @@
             android:id="@+id/btnAtt"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="6dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="6dp"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/container_textview_lista_cadastro"
-            android:text="Atualizar" />
+            android:text="Atualizar"
+            android:background="@drawable/container_btn_lista"
+             />
 
 
     </LinearLayout>
