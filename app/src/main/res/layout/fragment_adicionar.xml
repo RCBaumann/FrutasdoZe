@@ -76,17 +76,29 @@
             android:textAllCaps="true"
             android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/et_data"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:hint="DD/MM/AA"
-            android:maxLength="10"
-            android:imeOptions="actionDone"
-            android:inputType="datetime"
-            android:singleLine="true"
-            android:textColorHint="@color/white" />
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtViewData"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_margin="3dp"
+                android:hint="DD/MM/AA"
+                android:maxLength="10"
+                android:onClick="btnData"
+                android:singleLine="true"
+                android:textColorHint="@color/white" />
+
+            <Button
+                android:id="@+id/btnData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Data" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView9"
