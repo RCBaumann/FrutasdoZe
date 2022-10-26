@@ -78,26 +78,27 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="35dp"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/txtViewData"
+                android:id="@+id/campoDataAdd"
                 android:layout_width="300dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:hint="DD/MM/AA"
-                android:maxLength="10"
-                android:onClick="btnData"
                 android:singleLine="true"
                 android:textColorHint="@color/white" />
 
             <Button
-                android:id="@+id/btnData"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btnDataAdd"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Data" />
+                android:background="@drawable/calendar_icon"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:backgroundTint="#9E000000"/>
         </LinearLayout>
 
         <TextView

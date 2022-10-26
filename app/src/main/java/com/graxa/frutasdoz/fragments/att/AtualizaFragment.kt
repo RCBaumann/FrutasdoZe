@@ -1,6 +1,7 @@
 package com.graxa.frutasdoz.fragments.att
 
 import android.app.AlertDialog
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
@@ -13,9 +14,11 @@ import androidx.navigation.fragment.navArgs
 import com.graxa.frutasdoz.R
 import com.graxa.frutasdoz.model.Produtos
 import com.graxa.frutasdoz.viewmodel.ProdutosViewModel
+import kotlinx.android.synthetic.main.fragment_adicionar.*
 import kotlinx.android.synthetic.main.fragment_adicionar.view.*
 import kotlinx.android.synthetic.main.fragment_atualiza.*
 import kotlinx.android.synthetic.main.fragment_atualiza.view.*
+import java.util.*
 
 class AtualizaFragment : Fragment() {
 
@@ -33,11 +36,10 @@ class AtualizaFragment : Fragment() {
 
         view.etAttNome.setText(args.produtosAtual.nome)
         view.etAttTipo.setText(args.produtosAtual.tipoProduto)
-        view.etAttData.setText(args.produtosAtual.dataValidade)
+        view.campoDataAtt.setText(args.produtosAtual.dataValidade)
         view.etAttQuantidade.setText(args.produtosAtual.quantidade)
         view.etAttPeso.setText(args.produtosAtual.peso)
         view.etAttValor.setText(args.produtosAtual.valor)
-        //todo adicionar outros campos
 
         view.btnAtt.setOnClickListener(){
             atualizaDados()
@@ -45,19 +47,34 @@ class AtualizaFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
+        //datepicker calendario
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c. get(Calendar.DAY_OF_MONTH)
+
+        //btnData
+        view.btnDataAtt.setOnClickListener{
+            val dpd = DatePickerDialog(requireContext(), { view, mYear, mMonth, mDay ->
+                campoDataAtt.text = "$mDay/${mMonth+1}/$mYear"
+            }, year,month,day)
+            //showDialog
+            dpd.show()
+        }
+
         return view
     }
 
     private fun atualizaDados() {
         val nome = etAttNome.text.toString()
         val tipoProduto = etAttTipo.text.toString()
-        val dataValidade = etAttData.text.toString()
+        val dataValidade = campoDataAtt.text.toString()
         val quantdidade = etAttQuantidade.text.toString()
         val peso = etAttPeso.text.toString()
         val valor = etAttValor.text.toString()
 
         if((verificarDados(nome,tipoProduto,dataValidade,quantdidade,peso,valor))) {
-            val atualizaDados = Produtos(args.produtosAtual.id, nome, tipoProduto, dataValidade,quantdidade,peso,valor)
+            val atualizaDados = Produtos(args.produtosAtual.id, nome, tipoProduto,dataValidade,quantdidade,peso,valor)
             mProdutosViewModel.updateProdutos(atualizaDados)
             Toast.makeText(requireContext(),"Produto Atualizado!",Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_atualizaFragment_to_listaFragment2)
@@ -69,7 +86,7 @@ class AtualizaFragment : Fragment() {
 
     private fun verificarDados (
         nome: String, tipoProduto: String, dataValidade: String,quantdidade:String,peso:String,valor:String): Boolean {
-        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(tipoProduto) && TextUtils.isEmpty(dataValidade) && TextUtils.isEmpty(quantdidade) && TextUtils.isEmpty(peso) && valor.isEmpty())
+        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(tipoProduto) && TextUtils.isEmpty(dataValidade) && TextUtils.isEmpty(quantdidade) && TextUtils.isEmpty(peso) && TextUtils.isEmpty(valor))
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
