@@ -12,9 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.graxa.frutasdoz.R
 import com.graxa.frutasdoz.adapter.ListaAdapter
 import com.graxa.frutasdoz.viewmodel.ProdutosViewModel
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main.view.*
-import kotlinx.android.synthetic.main.fragment_adicionar.view.*
 import kotlinx.android.synthetic.main.fragment_lista.view.*
 
 class ListaFragment : Fragment() {
@@ -52,6 +49,5 @@ class ListaFragment : Fragment() {
 
         return view
     }
-
 
 }

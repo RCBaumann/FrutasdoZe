@@ -88,7 +88,8 @@
                 android:layout_margin="3dp"
                 android:hint="DD/MM/AA"
                 android:singleLine="true"
-                android:textColorHint="@color/white" />
+                android:textColorHint="@color/white"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/btnDataAdd"
@@ -113,7 +114,7 @@
             android:textAllCaps="true"
             android:textStyle="bold" />
 
-        <EditText
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/et_quantidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

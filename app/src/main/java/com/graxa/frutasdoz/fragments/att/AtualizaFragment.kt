@@ -3,9 +3,7 @@ package com.graxa.frutasdoz.fragments.att
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.*
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -14,16 +12,17 @@ import androidx.navigation.fragment.navArgs
 import com.graxa.frutasdoz.R
 import com.graxa.frutasdoz.model.Produtos
 import com.graxa.frutasdoz.viewmodel.ProdutosViewModel
-import kotlinx.android.synthetic.main.fragment_adicionar.*
-import kotlinx.android.synthetic.main.fragment_adicionar.view.*
 import kotlinx.android.synthetic.main.fragment_atualiza.*
 import kotlinx.android.synthetic.main.fragment_atualiza.view.*
 import java.util.*
+
 
 class AtualizaFragment : Fragment() {
 
     private val args by navArgs<AtualizaFragmentArgs>()
     private lateinit var mProdutosViewModel: ProdutosViewModel
+
+    //todo txtsize (depois)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -69,24 +68,24 @@ class AtualizaFragment : Fragment() {
         val nome = etAttNome.text.toString()
         val tipoProduto = etAttTipo.text.toString()
         val dataValidade = campoDataAtt.text.toString()
-        val quantdidade = etAttQuantidade.text.toString()
+        val quantidade = etAttQuantidade.text.toString()
         val peso = etAttPeso.text.toString()
         val valor = etAttValor.text.toString()
 
-        if((verificarDados(nome,tipoProduto,dataValidade,quantdidade,peso,valor))) {
-            val atualizaDados = Produtos(args.produtosAtual.id, nome, tipoProduto,dataValidade,quantdidade,peso,valor)
+        if((verificarDados(nome,tipoProduto,dataValidade,quantidade,peso,valor))) {
+            val atualizaDados = Produtos(args.produtosAtual.id, nome, tipoProduto,dataValidade,quantidade,peso,valor)
             mProdutosViewModel.updateProdutos(atualizaDados)
             Toast.makeText(requireContext(),"Produto Atualizado!",Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_atualizaFragment_to_listaFragment2)
         }else{
-            Toast.makeText(requireContext(),"Verifique as informações",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(),"Verifique as informações no cadastro",Toast.LENGTH_LONG).show()
         }
 
     }
 
-    private fun verificarDados (
-        nome: String, tipoProduto: String, dataValidade: String,quantdidade:String,peso:String,valor:String): Boolean {
-        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(tipoProduto) && TextUtils.isEmpty(dataValidade) && TextUtils.isEmpty(quantdidade) && TextUtils.isEmpty(peso) && TextUtils.isEmpty(valor))
+    private fun verificarDados (nome: String, tipoProduto: String, dataValidade: String,
+                                quantdidade:String,peso:String,valor:String): Boolean {
+        return !(nome.isEmpty() && tipoProduto.isEmpty() && dataValidade.isEmpty() && quantdidade.isEmpty() && peso.isEmpty() && valor.isEmpty())
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

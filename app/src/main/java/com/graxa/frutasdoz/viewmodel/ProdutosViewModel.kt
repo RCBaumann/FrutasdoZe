@@ -1,14 +1,18 @@
 package com.graxa.frutasdoz.viewmodel
 
 import android.app.Application
+import android.content.Context
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.graxa.frutasdoz.model.Produtos
 import com.graxa.frutasdoz.data.ProdutosDatabase
+import com.graxa.frutasdoz.model.Produtos
 import com.graxa.frutasdoz.repository.ProdutosRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.concurrent.Flow
 
 class ProdutosViewModel(application: Application): AndroidViewModel(application) {
 
@@ -43,6 +47,10 @@ class ProdutosViewModel(application: Application): AndroidViewModel(application)
         viewModelScope.launch(Dispatchers.IO) {
             repository.deleteAllProdutos()
         }
+    }
+
+    fun selectProdutos(searchQuery: String): LiveData<List<Produtos>> {
+        return repository.selectProdutos(searchQuery)
     }
 
 }

@@ -48,30 +48,54 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewData" />
 
     <TextView
+        android:id="@+id/txun"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:text="Un"
+        app:layout_constraintStart_toEndOf="@+id/nomeLista"
+        app:layout_constraintTop_toBottomOf="@+id/textViewQuantidade" />
+
+    <TextView
         android:id="@+id/quantidadeLista"
         android:layout_width="150dp"
         android:layout_height="20dp"
-        android:layout_marginStart="16dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/nomeLista"
+        app:layout_constraintStart_toEndOf="@+id/txun"
         app:layout_constraintTop_toTopOf="@+id/nomeLista" />
+
+    <TextView
+        android:id="@+id/txKg"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:text="Kg"
+        app:layout_constraintStart_toEndOf="@+id/tipoLista"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
         android:id="@+id/pesoLista"
         android:layout_width="150dp"
         android:layout_height="20dp"
-        android:layout_marginStart="16dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/tipoLista"
+        app:layout_constraintStart_toEndOf="@+id/txKg"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/txRs"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:text="R$"
+        app:layout_constraintStart_toEndOf="@+id/dataLista"
+        app:layout_constraintTop_toBottomOf="@+id/textViewValor" />
 
     <TextView
         android:id="@+id/valoLista"
         android:layout_width="150dp"
         android:layout_height="20dp"
-        android:layout_marginStart="16dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/dataLista"
+        app:layout_constraintStart_toEndOf="@+id/txRs"
         app:layout_constraintTop_toBottomOf="@+id/textViewValor" />
 
     <TextView
@@ -120,41 +144,41 @@
         android:id="@+id/textViewQuantidade"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="10dp"
-        android:text="Quantidade"
-        android:textColor="#50000000"
-        android:textAlignment="center"
         android:background="@drawable/container_edit_lista"
+        android:text="Quantidade"
+        android:textAlignment="center"
+        android:textColor="#50000000"
+        android:textSize="10dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/quantidadeLista"
-        app:layout_constraintStart_toStartOf="@+id/quantidadeLista" />
+        app:layout_constraintStart_toStartOf="@+id/txun" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="10dp"
-        android:textAlignment="center"
         android:layout_marginTop="8dp"
-        android:text="Peso"
-        android:textColor="#50000000"
         android:background="@drawable/container_edit_lista"
-        app:layout_constraintStart_toStartOf="@+id/pesoLista"
+        android:text="Peso"
+        android:textAlignment="center"
+        android:textColor="#50000000"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txKg"
         app:layout_constraintTop_toBottomOf="@+id/quantidadeLista" />
 
     <TextView
         android:id="@+id/textViewValor"
         android:layout_width="100dp"
-        android:layout_height="16dp"
-        android:textStyle="bold"
-        android:textSize="10dp"
-        android:textAlignment="center"
-        android:text="Valor"
-        android:textColor="#50000000"
-        android:background="@drawable/container_edit_lista"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="@+id/valoLista"
+        android:background="@drawable/container_edit_lista"
+        android:text="Valor"
+        android:textAlignment="center"
+        android:textColor="#50000000"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txRs"
         app:layout_constraintTop_toBottomOf="@+id/pesoLista" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

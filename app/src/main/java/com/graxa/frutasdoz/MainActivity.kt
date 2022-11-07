@@ -1,15 +1,20 @@
 package com.graxa.frutasdoz
 
 import android.os.Bundle
-import android.view.View
+import android.view.Menu
 import android.widget.*
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.graxa.frutasdoz.databinding.ActivityMainBinding
-import java.util.*
+import com.graxa.frutasdoz.model.Produtos
+import com.graxa.frutasdoz.viewmodel.ProdutosViewModel
 
-class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+class MainActivity : AppCompatActivity(),SearchView.OnQueryTextListener {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val mainViewModel: ProdutosViewModel by viewModels()
+    private val mAdapter: ListAdapter by lazy { mAdapter }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,29 +22,48 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val spinner: Spinner = findViewById(R.id.filtroSpinner)
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter.createFromResource(this, R.array.filtoArray, android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            spinner.adapter = adapter
-        }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.search_menu, menu)
+
+        val btnBuscar = menu?.findItem(R.id.app_bar_search)
+        val searchView = btnBuscar?.actionView as SearchView
+        searchView.isSubmitButtonEnabled = true
+        searchView.setOnQueryTextListener(this)
 
         binding.btnBuscar.setOnClickListener(){
             Toast.makeText(this,"Logo logo você vai poder pesquisar",Toast.LENGTH_LONG).show()
         }
 
+        return true
     }
 
-    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        TODO("Not yet implemented")
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if(query != null){
+            selectProdutos(query)
+        }
+        return true
     }
 
-    override fun onNothingSelected(parent: AdapterView<*>?) {
-        TODO("Not yet implemented")
+    override fun onQueryTextChange(query: String?): Boolean {
+        if(query != null){
+            selectProdutos(query)
+        }
+        return true
     }
+
+    private fun selectProdutos(query: String?){
+        val searchQuery = "%$query%"
+
+//        mainViewModel.selectProdutos(searchQuery).observe(this) { list ->
+//            list.let {
+//                mAdapter.setData(it)
+//            }
+//        }
+
+    }
+
 
 }

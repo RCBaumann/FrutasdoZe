@@ -1,10 +1,14 @@
 package com.graxa.frutasdoz.repository
 
 import androidx.lifecycle.LiveData
+import androidx.room.Query
 import com.graxa.frutasdoz.model.Produtos
 import com.graxa.frutasdoz.data.ProdutosDao
+import java.util.concurrent.Flow
+import javax.inject.Inject
 
-class ProdutosRepository(private val produtosDao: ProdutosDao) {
+class ProdutosRepository @Inject constructor(
+    private val produtosDao: ProdutosDao) {
 
     val readAllData: LiveData<List<Produtos>> = produtosDao.readAllData()
 
@@ -22,6 +26,10 @@ class ProdutosRepository(private val produtosDao: ProdutosDao) {
 
     suspend fun deleteAllProdutos(){
         produtosDao.deleteAllProdutos()
+    }
+
+    fun selectProdutos(searchQuery: String): LiveData<List<Produtos>> {
+        return produtosDao.selectProdutos(searchQuery)
     }
 
 }

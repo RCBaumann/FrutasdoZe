@@ -8,9 +8,13 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
 import com.graxa.frutasdoz.model.Produtos
+import java.util.concurrent.Flow
 
 @Dao
 interface ProdutosDao {
+
+    @Query("SELECT * FROM produtos_table WHERE tipoProduto LIKE '%' || :searchQuery || '%'")
+    fun selectProdutos(searchQuery: String): LiveData<List<Produtos>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addProdutos(produtos: Produtos)

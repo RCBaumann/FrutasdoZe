@@ -43,7 +43,8 @@
         android:imeOptions="actionDone"
         android:textSize="14dp"
         app:layout_constraintStart_toStartOf="@+id/header"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        android:visibility="invisible"/>
 
 
     <androidx.fragment.app.FragmentContainerView
@@ -66,7 +67,8 @@
         android:layout_width="50dp"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/pesquisarFruta"
-        app:layout_constraintStart_toEndOf="@+id/pesquisarFruta" />
+        app:layout_constraintStart_toEndOf="@+id/pesquisarFruta"
+        android:visibility="invisible"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnBuscar"
@@ -75,7 +77,8 @@
         android:background="@drawable/buscar_icon"
         android:text=""
         app:layout_constraintBottom_toBottomOf="@+id/pesquisarFruta"
-        app:layout_constraintEnd_toEndOf="@+id/header" />
+        app:layout_constraintEnd_toEndOf="@+id/header"
+        android:visibility="invisible"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
